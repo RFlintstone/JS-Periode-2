@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 17 - selectie3</title>
+</head>
+<body>
+<h1>Opdracht 17 - selectie3</h1>
+<h2>Leeftijdscontrole</h2>
+<p>Invoer met behulp van document.getElementById()</p>
+<p>Uitvoer met behulp van document.getElementById()</p>
+
+<input type="text" id="amount"></input>
+
+<button onclick="check()">Submit</button>
+
+<p id="result"></p>
+<script>
+    function check() {
+
+        var pr = document.getElementById("amount").value;
+
+        if(pr <100){
+            // document.write("<img src='cola.png'>")
+            document.getElementById("result").innerHTML = "<p>" + "Je krijgt helaas geen korting." + "</p>";
+        }
+
+        else if(pr >=100){
+            // document.write("<img src='cola.png'>")
+            document.getElementById("result").innerHTML = "<p>" + "Je krijgt 10% korting." + "</p>";
+        }
+
+        else {
+            // document.write("<img src='cola.png'>")
+            document.getElementById("result").innerHTML = "<p>" + "You fucked up" + "</p>";
+        }
+
+
+    }
+</script>
+</body>
+</html>

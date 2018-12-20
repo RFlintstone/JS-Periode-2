@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 3 - gedicht</title>
+</head>
+<body>
+<script>
+
+    document.write("<h1>Op een kat</h1>");
+    document.write("<p>Een kattige kelner uit Katwijk</p>");
+    document.write("<p>zei: “ 'k Ben bang dat ik weer eens wat zat lijk.”</p>");
+    document.write("<p>“ 'k Heb een kater,” zei hij</p>");
+    document.write("<p>“voor een hond ga 'k opzij</p>");
+    document.write("<p>Maar dacht je dat ik voor een kat wijk?”</p>");
+
+</script>
+</body>
+</html>

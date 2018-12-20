@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kruising1</title>
+</head>
+<body background="./verkeer/kruising.jpg">
+<h1>Kruising1</h1>
+<p>Verwisselen van plaatjes</p>
+<h2>Stoplicht</h2>
+<button onclick="aanzetten()">aanzetten</button>
+<button onclick="knipperen()">knipperen</button>
+<button onclick="uitzetten()">uitzetten</button>
+<!--<h2>Auto</h2>-->
+<!--<button onclick="starten()">Starten</button>-->
+<!--<button onclick="opnieuw()">Opnieuw</button>-->
+<!--<button onclick="stopauto()">Stop</button>-->
+<h2>Alles</h2>
+<button onclick="alles()">Starten</button>
+
+<button onclick="checkposstop3()"></button>
+<img id="stoplicht" src="./verkeer/uit.jpg" width="40px" height="80px">
+<img id="stoplicht2" src="./verkeer/uit.jpg" width="40px" height="80px">
+<img id="stoplicht3" src="./verkeer/uit.jpg" width="40px" height="80px">
+<img id="stoplicht4" src="./verkeer/uit.jpg" width="40px" height="80px">
+
+<img id="auto" src="./verkeer/auto.png" width="80px" height="80px"> <!-- 1 -->
+<img id="auto2" src="./verkeer/auto2.gif" width="80px" height="80px"> <!-- 2 -->
+<img id="auto3" src="./verkeer/auto.png" width="80px" height="80px"> <!-- 3 -->
+<img id="auto4" src="./verkeer/auto.png" width="80px" height="80px"> <!-- 4 -->
+<script>
+ var werken;
+ var buitenwerking;
+ var stoplichtkleur;
+ var stoplicht = document.getElementById('stoplicht');
+ var stoplicht2 = document.getElementById('stoplicht2');
+ var stoplicht3 = document.getElementById('stoplicht3');
+ var stoplicht4 = document.getElementById('stoplicht4');
+
+
+ stoplicht.style.position = 'absolute';
+ stoplicht.style.left = '715px';
+ stoplicht.style.top = '510px';
+
+ stoplicht2.style.position = 'absolute';
+ stoplicht2.style.left = '985px';
+ stoplicht2.style.top = '210px';
+
+ stoplicht3.style.position = 'absolute';
+ stoplicht3.style.left = '1100px';
+ stoplicht3.style.top = '570px';
+
+ stoplicht4.style.position = 'absolute';
+ stoplicht4.style.left = '550px';
+ stoplicht4.style.top = '250px';
+
+ function aanzetten() {
+     clearTimeout(buitenwerking);
+     // werken = setTimeout(function (){uit()}, 0);
+     werken = setTimeout(function (){groen()}, 1000);
+     werken = setTimeout(function (){geel()}, 4000);
+     werken = setTimeout(function (){rood()}, 6000);
+
+     werken = setTimeout(function (){groen2()}, 6000);
+     werken = setTimeout(function (){geel2()}, 8000);
+     werken = setTimeout(function (){rood2()}, 10000);
+     werken = setTimeout(function (){rood2()}, 1000);
+
+
+
+     werken = setTimeout(function (){aanzetten()}, 8000);
+
+
+ }
+
+ function knipperen() {
+     clearTimeout(werken)
+     buitenwerking = setTimeout(function (){uit()}, 0);
+     buitenwerking = setTimeout(function (){geel()}, 500);
+     buitenwerking = setTimeout(function (){knipperen()}, 1000);
+ }
+
+ function rood() {
+     stoplichtkleur = 'rood';
+     stoplicht.src = './verkeer/rood.jpg';
+     stoplicht2.src = './verkeer/rood.jpg';
+
+
+ }
+ function geel() {
+     stoplichtkleur = 'geel';
+     stoplicht.src = './verkeer/geel.jpg';
+     stoplicht2.src = './verkeer/geel.jpg';
+
+
+ }
+ function groen() {
+     stoplichtkleur = 'groen';
+     stoplicht.src = './verkeer/groen.jpg';
+     stoplicht2.src = './verkeer/groen.jpg';
+
+
+ }
+
+ function rood2() {
+     stoplichtkleur2 = 'rood';
+
+     stoplicht3.src = './verkeer/rood.jpg';
+     stoplicht4.src = './verkeer/rood.jpg';
+
+ }
+ function geel2() {
+     stoplichtkleur2 = 'rood';
+
+     stoplicht3.src = './verkeer/geel.jpg';
+     stoplicht4.src = './verkeer/geel.jpg';
+
+ }
+ function groen2() {
+     stoplichtkleur2 = 'groen';
+
+     stoplicht3.src = './verkeer/groen.jpg';
+     stoplicht4.src = './verkeer/groen.jpg';
+
+ }
+ // function uit() {
+ //     // stoplichtkleur = uit;
+ //     stoplicht.src = './verkeer/uit.jpg';
+ //     stoplicht2.src = './verkeer/uit.jpg';
+ //     stoplicht3.src = './verkeer/uit.jpg';
+ //     stoplicht4.src = './verkeer/uit.jpg';
+ //
+ // }
+
+ function uitzetten() {
+     clearTimeout(werken);
+     clearTimeout(buitenwerking);
+     werken = null;
+     buitenwerking = null;
+     stoplicht.src = './verkeer/uit.jpg';
+     stoplicht2.src = './verkeer/uit.jpg';
+     stoplicht3.src = './verkeer/uit.jpg';
+     stoplicht4.src = './verkeer/uit.jpg';
+ }
+
+ var rijden;
+ var auto = document.getElementById('auto');
+ auto.style.position = 'absolute';
+ auto.style.left = '750px';
+ auto.style.top = '600px';
+
+ var auto2 = document.getElementById('auto2');
+ auto2.style.position = 'absolute';
+ auto2.style.left = '900px';
+ auto2.style.bottom = '600px';
+
+ var auto3 = document.getElementById('auto3');
+ auto3.style.position = 'absolute';
+ auto3.style.right = '1400px';
+ auto3.style.top = '350px';
+
+ var auto4 = document.getElementById('auto4');
+ auto4.style.position = 'absolute';
+ auto4.style.left = '1400px';
+ auto4.style.top = '500px';
+ function starten() {
+        // checkposstop();
+        // checkposstop2();
+     setInterval(function (){checkposstop();}, 10);
+     setInterval(function (){checkposstop2();}, 10);
+     setInterval(function (){checkposstop3();}, 10);
+     setInterval(function (){checkposstop4();}, 10);
+
+     setInterval(function (){checkposreset()}, 10);
+     setInterval(function (){checkposreset2()}, 10);
+     setInterval(function (){checkposreset3()}, 10);
+     setInterval(function (){checkposreset4()}, 10);
+
+     // setTimeout(function (){checkposstop()}, 10);
+     // checkposstop();
+ }
+
+ function opnieuw() {
+     auto.style.top = '600px';
+ }
+
+ function stopauto() {
+     clearTimeout(rijden);
+ }
+
+ //Alles starten
+    function alles() {
+        // setTimeout(function (){starten()}, 7000);
+        // setTimeout(function (){aanzetten()}, 10);
+        starten();
+        aanzetten();
+    }
+
+ function checkposreset() {
+    //Check auto position
+    if (auto.style.top === '-100px') {
+        auto.style.top = '600px';
+        // setTimeout(function (){checkposreset()}, 10);
+    }
+    // setTimeout(function (){checkposreset()}, 10);
+}
+
+ function checkposreset2() {
+     //Check auto position
+     if (auto2.style.bottom === '-100px') {
+         auto2.style.bottom = '650px';
+         // setTimeout(function (){checkposreset2()}, 10);
+     }
+     // setTimeout(function (){checkposreset2()}, 10);
+ }
+
+ function checkposreset3() {
+     //Check auto position
+     if (auto3.style.right === '-100px') {
+         auto3.style.right = '1400px';
+         // setTimeout(function (){checkposreset3()}, 10);
+     }
+     // setTimeout(function (){checkposreset3()}, 10);
+ }
+
+ function checkposreset4() {
+     //Check auto position
+     if (auto4.style.left === '-100px') {
+         auto4.style.left = '1400px';
+     }
+ }
+//
+// function checkposstop() {
+//     if (auto.style.top === '600px' && stoplichtkleur === 'rood') {
+//         clearTimeout(rijden);
+//         setTimeout(function (){checkposstop()}, 10);
+//     }
+//     else {
+//         setTimeout(starten, 10);
+//         setTimeout(function (){checkposstop()}, 10);
+//     }
+// }
+function checkposstop() {
+    if (auto.style.top === '510px' && stoplichtkleur === 'rood') {
+        // clearTimeout(rijden);
+        // setInterval(function (){checkposstop()}, 10);
+        auto.style.top;
+    }else {
+        auto.style.top = parseInt(auto.style.top) - 5 + 'px';
+    }
+}
+ //
+ function checkposstop2() {
+     if (auto2.style.bottom === '600px' && stoplichtkleur === 'rood') {
+         // clearTimeout(rijden);
+         // setInterval(function (){checkposstop2()}, 10);
+         auto2.style.top;
+     }else {
+         // auto2.style.bottom = auto2.style.bottom - '5px';
+         auto2.style.bottom = parseInt(auto2.style.bottom) - 5 + 'px';
+     }
+ }
+
+ function checkposstop3() {
+     if (auto3.style.right === '1000px' && stoplichtkleur2 === 'rood') {
+         // clearTimeout(rijden);
+         // setTimeout(function (){checkposstop3()}, 10);
+         auto3.style.top;
+     }else {
+         auto3.style.right = parseInt(auto3.style.right) - 5 + 'px';
+     }
+ }
+
+ function checkposstop4() {
+     if (auto4.style.left === '1150px' && stoplichtkleur2 === 'rood') {
+         auto4.style.top;
+     }else {
+         auto4.style.left = parseInt(auto4.style.left) - 5 + 'px';
+     }
+ }
+</script>
+</body>
+</html>

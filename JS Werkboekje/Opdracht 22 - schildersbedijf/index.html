@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 22 - schildersbedrijf</title>
+</head>
+<body>
+<h1>Opdracht 22 - schildersbedrijf</h1>
+
+<p>Soort 1: Muur</p>
+<p>Soort 2: Plafond</p>
+<p>Soort 3: Vloer</p>
+
+<input type="text" id="soort" placeholder="soort"></input>
+<input type="text" id="lengte" placeholder="lengte"></input>
+<input type="text" id="breedte" placeholder="breedte"></input>
+
+<button onclick="prijs()">Submit</button>
+
+
+<p id="so"></p> <!-- Soort -->
+<p id="le"></p> <!-- Lengte -->
+<p id="br"></p> <!-- Breedte -->
+<p id="opp"></p> <!-- Oppervlakte -->
+<p id="pp"></p> <!-- Prijs per m2 -->
+<p id="to"></p> <!-- Totaal -->
+
+
+<script>
+    function prijs() {
+
+        var soort = document.getElementById("soort").value;
+        var lengte = parseInt(document.getElementById("lengte").value);
+        var breedte = document.getElementById("breedte").value;
+        var prijs = "";
+
+        document.getElementById("so").innerHTML = "<p>" + "Soort: " + soort + "</p>";
+        document.getElementById("le").innerHTML = "<p>" + "Lengte: " + lengte + "</p>";
+        document.getElementById("br").innerHTML = "<p>" + "Breedte: " + breedte + "</p>";
+        document.getElementById("opp").innerHTML = "<p>" + "Oppervlakte: " + (lengte * breedte) + "</p>";
+
+
+
+        if (soort == 1) { // Muur - 25,-
+            var prijs = "25";
+            document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + (prijs * (lengte * breedte)) + "</p>";
+            document.getElementById("pp").innerHTML = "<p>" + "Prijs per m2: " + prijs + "</p>";
+        }
+
+        else if (soort == 2) { //Plafond - 40,-
+            var prijs = "40";
+            document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + (prijs * (lengte * breedte)) + "</p>";
+            document.getElementById("pp").innerHTML = "<p>" + "Prijs per m2: " + prijs + "</p>";
+        }
+
+        else if (soort == 3) { //Vloer - 30,-
+            var prijs = "30";
+            document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + (prijs * (lengte * breedte)) + "</p>";
+            document.getElementById("pp").innerHTML = "<p>" + "Prijs per m2: " + prijs + "</p>";
+        }
+
+        else {
+            var prijs = "0";
+            document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + "{error}" + "</p>";
+            document.getElementById("so").innerHTML = "<p>" + "Soort: " + "{error}" + "</p>";
+            document.getElementById("pp").innerHTML = "<p>" + "Prijs per m2: " + "{error}" + "</p>";
+
+        }
+
+    }
+</script>
+</body>
+</html>

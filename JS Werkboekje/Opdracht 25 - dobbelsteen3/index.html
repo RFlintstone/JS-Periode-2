@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 25 - dobbelsteen3</title>
+</head>
+<body>
+<h1>Opdracht 25 - dobbelsteen3</h1>
+
+<button onclick="gooi()">Submit</button>
+
+<p id="result"></p>
+
+
+<script>
+    function gooi() {
+
+        var worp = Math.floor(Math.random() * 6 + 1);
+
+        // document.write("Je gooide: " + worp)
+
+        // document.getElementById("result").innerHTML = "<p>" + "Je gooide: " + worp + "</p>";
+
+        switch (worp) {
+            case 1:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: één " + "</p>";
+                break;
+            case 2:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: twee " + "</p>";
+                break;
+            case 3:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: drie " + "</p>";
+                break;
+            case 4:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: vier " + "</p>";
+                break;
+            case 5:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: vijf " + "</p>";
+                break;
+            case 6:
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: zes " + "</p>";
+                break;
+        }
+    }
+</script>
+</body>
+</html>

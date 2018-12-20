@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stoplicht3</title>
+</head>
+<body background="./verkeer/kruising.jpg">
+<h1>Stoplicht3</h1>
+<p>Verwisselen van plaatjes</p>
+
+<button onclick="rood()">Rood</button>
+<button onclick="geel()">Geel</button>
+<button onclick="groen()">Groen</button>
+<button onclick="uit()">Uit</button>
+<img id="stoplicht" onclick="veranderstoplicht()" src="./verkeer/rood.jpg" width="40px" height="80px">\
+
+<script>
+    var stoplicht = document.getElementById('stoplicht');
+    stoplicht.style.position = 'absolute';
+    stoplicht.style.left = '715px';
+    stoplicht.style.top = '510px';
+
+    function rood() {
+        stoplicht.src = './verkeer/rood.jpg';
+    }
+    function geel() {
+        stoplicht.src = './verkeer/geel.jpg';
+    }
+    function groen() {
+        stoplicht.src = './verkeer/groen.jpg';
+    }
+    function uit() {
+        stoplicht.src = './verkeer/uit.jpg';
+    }
+
+</script>
+</body>
+</html>

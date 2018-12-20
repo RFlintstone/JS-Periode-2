@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 24 - dobbelsteen2</title>
+</head>
+<body>
+<h1>Opdracht 24 - dobbelsteen2</h1>
+
+<button onclick="gooi()">Submit</button>
+
+<p id="result"></p>
+
+
+<script>
+    function gooi() {
+
+        var worp = Math.floor(Math.random() * 6 + 1);
+
+        // document.write("Je gooide: " + worp)
+
+        document.getElementById("result").innerHTML = "<p>" + "Je gooide: " + worp + "</p>";
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 19 - drieDubbeleSelectie1</title>
+</head>
+<body>
+<h1>Opdracht 19 - drieDubbeleSelectie1</h1>
+<h2>Leeftijdscontrole</h2>
+<p>Invoer met behulp van document.getElementById()</p>
+<p>Uitvoer met behulp van document.getElementById()</p>
+
+<input type="text" id="school"></input>
+
+<button onclick="check()">Submit</button>
+
+<p id="result"></p>
+<script>
+    function check() {
+
+        var sch = document.getElementById("school").value;
+
+        if (sch < 5) {
+            document.getElementById("result").innerHTML = "<p>" + "Kinderopvang." + "</p>";
+        }
+        else if (sch < 13) {
+            document.getElementById("result").innerHTML = "<p>" + "Lagere school." + "</p>";
+        }
+
+        else if (sch < 17) {
+            document.getElementById("result").innerHTML = "<p>" + "middelbare school." + "</p>";
+        }
+
+        else {
+            document.getElementById("result").innerHTML = "<p>" + "vervolgonderwijs." + "</p>";
+        }
+
+
+    }
+</script>
+</body>
+</html>

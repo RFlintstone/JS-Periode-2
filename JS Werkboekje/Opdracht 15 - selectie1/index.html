@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 15 - selectie1</title>
+</head>
+<body>
+<h1>Opdracht 15 - selectie1</h1>
+<h2>Leeftijdscontrole</h2>
+<p>Invoer met behulp van document.getElementById()</p>
+<p>Uitvoer met behulp van document.getElementById()</p>
+
+<input type="text" id="age"></input>
+
+<button onclick="check()">Submit</button>
+
+<script>
+    function check() {
+
+        var leeftijd = document.getElementById("age").value;
+
+        if(leeftijd <18){
+            document.write("<img src='nix18.png'>")
+            // document.getElementById("aa").innerHTML = "<img src='nix18.png'>";
+        }
+
+        else {
+            document.write("Einde van het programma ");
+            // document.getElementById("pr").innerHTML = "Einde van het programma ";
+        }
+    }
+</script>
+</body>
+</html>

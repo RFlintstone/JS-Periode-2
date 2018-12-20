@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>X*Y</h2>
+<p>X=</p><input type="text" id="xx" placeholder="X">
+<p>Type=</p><input type="text" id="type" placeholder="*, /, +, -" value="">
+<p>Y=</p><input type="text" id="yy" placeholder="Y">
+
+<p>Click the button when entered X and Y</p>
+
+<button onclick="myFunction()">Calculate</button>
+
+<p id="calc"></p>
+<p id="testtype"></p>
+<script>
+    function myFunction() {
+        if (document.getElementById("type") != null) { //Checks if type exists
+
+            var typecalc = ""
+            var xr = parseFloat(document.getElementById("xx").value || "0", 10);
+            var yr = parseFloat(document.getElementById("yy").value || "0", 10)
+
+
+            switch (document.getElementById("type").value) {
+                case "*":
+                    // type = "*";
+                    document.getElementById("calc").innerHTML = yr * xr
+                    break;
+
+                case "/":
+                    // type = "/";
+                    document.getElementById("calc").innerHTML = yr / xr
+                    break;
+
+                case "+":
+                    // type = "+";
+                    document.getElementById("calc").innerHTML = yr + xr
+                    break;
+
+                case "-":
+                    // type = "-";
+                    document.getElementById("calc").innerHTML = yr - xr
+                    break;
+
+                default:
+                    document.getElementById("calc").innerHTML = "You were supposed to full in everything correctly.. Seriously, even a one year old could do this... (Okay, maybe not but still, it's an amazing thing you didn't do this right. GG dude, GG."
+                    break;
+
+                // default: alert("ERROR");
+            }
+        }
+
+        else {
+            alert("type id doesn't exist, check your code.")
+        }
+        // document.getElementById("calc").innerHTML = type;
+        // return type;
+
+
+        // document.getElementById("calc").innerHTML = yr + type + xr + " " + "=" + yr + typecalc + xr;
+    }
+
+</script>
+</body>
+</html>

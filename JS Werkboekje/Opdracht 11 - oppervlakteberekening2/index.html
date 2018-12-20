@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 11 - oppervlakteberekening2</title>
+</head>
+<body>
+<h1>Opdracht 11 - oppervlakteberekening2</h1>
+<p>Invoer met behulp van document.getElementById()</p>
+<p>Uitvoer met behulp van document.write()</p>
+
+<input type="text" id="lengte"></input>
+<input type="text" id="breedte"></input>
+
+<button onclick="opp()">Submit</button>
+<script>
+    function opp() {
+
+        var lengte = document.getElementById("lengte").value;
+        var breedte = document.getElementById("breedte").value;
+
+        // document.getElementById("le").innerHTML = "<p>" + "Lengte: " + lengte +  "</p>";
+        // document.getElementById("br").innerHTML = "<p>" + "Breedte: " + breedte + "</p>";
+        // document.getElementById("age").innerHTML = "<p>" + "En de oppervlakte is: " + l * b + "</p>";
+
+        document.write(" Lengte: " + lengte);
+        document.write(" Breedte: " + breedte);
+        document.write(" Opp: " + lengte * breedte);
+    }
+</script>
+</body>
+</html>

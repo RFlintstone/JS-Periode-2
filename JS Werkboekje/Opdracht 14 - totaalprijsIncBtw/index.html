@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 14 - totaalprijsIncBtw</title>
+</head>
+<body>
+<h1>Opdracht 14 - totaalprijsIncBtw</h1>
+<p>Invoer met behulp van document.getElementById()</p>
+<p>Uitvoer met behulp van document.getElementById()</p>
+
+<input type="text" id="aantal"></input>
+<input type="text" id="prijs"></input>
+
+<button onclick="prijs()">Submit</button>
+
+<p id="aa"></p>
+<p id="pr"></p>
+<p id="to"></p>
+<p id="plusbtw"></p>
+<script>
+    function prijs() {
+
+        var aantal = document.getElementById("aantal").value;
+        var prijs = document.getElementById("prijs").value;
+
+        document.getElementById("aa").innerHTML = "<p>" + "Aantal producten: " + aantal +  "</p>";
+        document.getElementById("pr").innerHTML = "<p>" + "Prijs (per product): " + prijs + "</p>";
+        document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + aantal * prijs + "</p>";
+        document.getElementById("plusbtw").innerHTML = "<p>" + "Totaal prijs + BTW: " + (aantal * prijs)/100*121 + "</p>";
+
+        // document.write(" Lengte: " + lengte);
+        // document.write(" Breedte: " + breedte);
+        // document.write(" Opp: " + lengte * breedte);
+    }
+</script>
+</body>
+</html>

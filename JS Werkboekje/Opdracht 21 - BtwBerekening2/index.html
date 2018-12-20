@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 21 - BtwBerekening2</title>
+</head>
+<body>
+<h1>Opdracht 21 - BtwBerekening2</h1>
+
+
+<input type="text" id="aantal" placeholder="aantal"></input>
+<input type="text" id="prijs" placeholder="prijs"></input>
+<input type="text" id="btwcode" placeholder="btwcode"></input>
+
+<button onclick="prijs()">Submit</button>
+
+<p id="aa"></p>
+<p id="pr"></p>
+<p id="to"></p>
+<p id="code"></p>
+<p id="plusbtw"></p>
+<p id="btwex"></p>
+<p id="btwinc"></p>
+
+<script>
+    function prijs() {
+
+        var aantal = document.getElementById("aantal").value;
+        var prijs = parseInt(document.getElementById("prijs").value);
+        var code = document.getElementById("btwcode").value;
+        var btw = "";
+
+        document.getElementById("aa").innerHTML = "<p>" + "Aantal producten: " + aantal +  "</p>";
+        document.getElementById("pr").innerHTML = "<p>" + "Prijs (per product): " + prijs + "</p>";
+        document.getElementById("to").innerHTML = "<p>" + "Totaal prijs: " + aantal * prijs + "</p>";
+        // document.getElementById("plusbtw").innerHTML = "<p>" + "Totaal prijs + BTW: " + (aantal * prijs)/100*121 + "</p>";
+        // document.getElementById("code").innerHTML = "<p>" + "BTW Code: " + code + "</p>";
+
+        if (code == 1) {
+            // document.write("0% BTW");
+            document.getElementById("code").innerHTML = "<p>" + "BTW Code: 0% BTW" + "</p>";
+            var btw = "0";
+            document.getElementById("btwex").innerHTML = "<p>" + "BTW Bedrag: " + prijs / 100 * btw + "</p>";
+            document.getElementById("btwinc").innerHTML = "<p>" + "Bedrag Inc. BTW: " + ((prijs * aantal) + (prijs / 100 * btw)) + "</p>";
+        }
+        else if (code == 2) {
+            // document.write("6% BTW");
+            document.getElementById("code").innerHTML = "<p>" + "BTW Code: 6% BTW" + "</p>";
+            var btw = "6";
+            document.getElementById("btwex").innerHTML = "<p>" + "BTW Bedrag: " + prijs / 100 * btw + "</p>";
+            document.getElementById("btwinc").innerHTML = "<p>" + "Bedrag Inc. BTW: " + ((prijs * aantal) + (prijs / 100 * btw)) + "</p>";
+        }
+
+        else if (code == 3) {
+            // document.write("21% BTW");
+            document.getElementById("code").innerHTML = "<p>" + "BTW Code: 21% BTW" + "</p>";
+            var btw = "21";
+            document.getElementById("btwex").innerHTML = "<p>" + "BTW Bedrag: " + prijs / 100 * btw + "</p>";
+            document.getElementById("btwinc").innerHTML = "<p>" + "Bedrag Inc. BTW: " + ((prijs * aantal) + (prijs / 100 * btw)) + "</p>";
+        }
+
+        else {
+            // document.write("That's not right " + "<a href='index.html'>Click here to go back </a>");
+            document.getElementById("code").innerHTML = "<p>" + "BTW Code: Doesn't exist" + "</p>";
+            var btw = "0";
+            document.getElementById("btwex").innerHTML = "<p>" + "BTW Bedrag: " + prijs / 100 * btw + "</p>";
+            document.getElementById("btwinc").innerHTML = "<p>" + "Bedrag Inc. BTW: " + ((prijs * aantal) + (prijs / 100 * btw)) + "</p>";
+        }
+    }
+</script>
+</body>
+</html>

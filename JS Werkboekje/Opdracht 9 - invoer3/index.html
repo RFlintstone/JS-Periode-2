@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 9 - invoer2</title>
+</head>
+<body>
+<h1>Opdracht 9 - invoer3</h1>
+<p>Invoer met behulp van input met id - document.getElementById()</p>
+<p>Uitvoer met behulp van document.getElementById()</p>
+
+<input type="text" id="nameinput""></input>
+<input type="text" id="ageinput"></input>
+
+<button onclick="myfunction()">Submit age and name</button>
+
+<p id="name"></p>
+<p id="age"></p>
+<script>
+    function myfunction() {
+        var naam = document.getElementById("nameinput").value;
+        var leeftijd = document.getElementById("ageinput").value;
+
+        document.getElementById("name").innerHTML = "<p>" + "Je naam is: " + naam + "</p>";
+        document.getElementById("age").innerHTML = "<p>" + "En je bent: " + leeftijd + " jaar oud" + "</p>";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>X*Y</h2>
+<p>X=7</p>
+<p>Y=</p><input type="text" id="myText" placeholder="value">
+
+<p>Click the button when entered Y.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var x = 7;
+        // var z = x * y;
+        var y = document.getElementById("myText").value;
+        document.getElementById("demo").innerHTML = y * x;
+
+    }
+</script>
+
+<h2>X*Y</h2>
+<p>X=</p><input type="text" id="xx" placeholder="X">
+<p>Y=</p><input type="text" id="yy" placeholder="Y">
+
+<p>Click the button when entered X and Y</p>
+
+<button onclick="myFunction()">Calculate</button>
+
+<p id="calc"></p>
+<script>
+    function myFunction() {
+        var xr = document.getElementById("xx").value;
+        // var z = x * y;
+        var yr = document.getElementById("yy").value;
+        document.getElementById("calc").innerHTML = yr * xr;
+    }
+</script>
+</body>
+</html>

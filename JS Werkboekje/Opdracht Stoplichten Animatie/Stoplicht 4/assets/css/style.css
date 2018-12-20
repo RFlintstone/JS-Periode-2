@@ -1,0 +1,14 @@
+/* Main CSS file */
+
+.textcolor {
+	color: #4286f4;
+}
+
+html {
+	background: #4286f4;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}

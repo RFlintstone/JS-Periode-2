@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 26 - dobbelsteen4</title>
+</head>
+<body>
+<h1>Opdracht 26 - dobbelsteen4</h1>
+
+<button onclick="gooi()">Submit</button>
+
+<p id="resultimg"></p>
+<p id="result"></p>
+
+
+
+<script>
+    function gooi() {
+
+        var worp = Math.floor(Math.random() * 6 + 1);
+
+        // document.write("Je gooide: " + worp)
+
+        // document.getElementById("result").innerHTML = "<p>" + "Je gooide: " + worp + "</p>";
+
+        switch (worp) {
+            case 1:
+                document.getElementById("resultimg").innerHTML = "<img src='1.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: één " + "</p>";
+                break;
+            case 2:
+                document.getElementById("resultimg").innerHTML = "<img src='2.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: twee " + "</p>";
+                break;
+            case 3:
+                document.getElementById("resultimg").innerHTML = "<img src='3.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: drie " + "</p>";
+                break;
+            case 4:
+                document.getElementById("resultimg").innerHTML = "<img src='4.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: vier " + "</p>";
+                break;
+            case 5:
+                document.getElementById("resultimg").innerHTML = "<img src='5.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: vijf " + "</p>";
+                break;
+            case 6:
+                document.getElementById("resultimg").innerHTML = "<img src='6.gif'>" + "</img>";
+                document.getElementById("result").innerHTML = "<p>" + "Je gooide: zes " + "</p>";
+                break;
+        }
+    }
+</script>
+</body>
+</html>

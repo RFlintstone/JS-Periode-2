@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verkeer1</title>
+</head>
+<body background="./verkeer/kruising.jpg">
+<h1>Verkeer1</h1>
+<p>Verwisselen van plaatjes</p>
+<h2>Stoplicht</h2>
+<button onclick="aanzetten()">aanzetten</button>
+<button onclick="knipperen()">knipperen</button>
+<button onclick="uitzetten()">uitzetten</button>
+<h2>Auto</h2>
+<button onclick="starten()">Starten</button>
+<button onclick="opnieuw()">Opnieuw</button>
+<button onclick="stopauto()">Stop</button>
+<h2>Alles</h2>
+<button onclick="alles()">Starten</button>
+
+<img id="stoplicht" src="./verkeer/uit.jpg" width="40px" height="80px">
+<img id="auto" src="./verkeer/auto.png" width="80px" height="80px">
+
+<script>
+ var werken;
+ var buitenwerking;
+ var stoplicht = document.getElementById('stoplicht');
+
+ stoplicht.style.position = 'absolute';
+ stoplicht.style.left = '715px';
+ stoplicht.style.top = '510px';
+
+ function aanzetten() {
+     clearTimeout(buitenwerking);
+     werken = setTimeout(function (){uit()}, 0);
+     werken = setTimeout(function (){rood()}, 1000);
+     werken = setTimeout(function (){geel()}, 4000);
+     werken = setTimeout(function (){groen()}, 6000);
+     werken = setTimeout(function (){aanzetten()}, 8000);
+
+
+ }
+
+ function knipperen() {
+     clearTimeout(werken)
+     buitenwerking = setTimeout(function (){uit()}, 0);
+     buitenwerking = setTimeout(function (){geel()}, 500);
+     buitenwerking = setTimeout(function (){knipperen()}, 1000);
+ }
+
+ function rood() {
+     stoplicht.src = './verkeer/rood.jpg';
+ }
+ function geel() {
+     stoplicht.src = './verkeer/geel.jpg';
+ }
+ function groen() {
+     stoplicht.src = './verkeer/groen.jpg';
+ }
+ function uit() {
+     stoplicht.src = './verkeer/uit.jpg';
+ }
+
+ function uitzetten() {
+     clearTimeout(werken);
+     clearTimeout(buitenwerking);
+     werken = null;
+     buitenwerking = null;
+     stoplicht.src = './verkeer/uit.jpg';
+ }
+
+ var rijden;
+ var auto = document.getElementById('auto');
+ auto.style.position = 'absolute';
+ auto.style.left = '750px';
+ auto.style.top = '600px';
+
+ function starten() {
+     auto.style.top = parseInt(auto.style.top) - 5 + 'px';
+     rijden = setTimeout(starten, 10);
+ }
+
+ function opnieuw() {
+     auto.style.top = '600px';
+ }
+
+ function stopauto() {
+     clearTimeout(rijden);
+ }
+
+ //Alles starten
+    function alles() {
+        setTimeout(function (){starten()}, 7000);
+        setTimeout(function (){aanzetten()}, 10);
+    }
+</script>
+</body>
+</html>

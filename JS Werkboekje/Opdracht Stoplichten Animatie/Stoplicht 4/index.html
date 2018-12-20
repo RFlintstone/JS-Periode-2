@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stoplicht3</title>
+</head>
+<body background="./verkeer/kruising.jpg">
+<h1>Stoplicht4</h1>
+<p>Verwisselen van plaatjes</p>
+
+<button onclick="aanzetten()">aanzetten</button>
+<button onclick="knipperen()">knipperen</button>
+<button onclick="uitzetten()">uitzetten</button>
+<img id="stoplicht" src="./verkeer/uit.jpg" width="40px" height="80px">
+
+<script>
+ var werken;
+ var buitenwerking;
+ var stoplicht = document.getElementById('stoplicht');
+
+ stoplicht.style.position = 'absolute';
+ stoplicht.style.left = '715px';
+ stoplicht.style.top = '510px';
+
+ function aanzetten() {
+     clearTimeout(buitenwerking);
+     werken = setTimeout(function (){uit()}, 0);
+     werken = setTimeout(function (){rood()}, 1000);
+     werken = setTimeout(function (){geel()}, 4000);
+     werken = setTimeout(function (){groen()}, 6000);
+     werken = setTimeout(function (){aanzetten()}, 8000);
+
+
+ }
+
+ function knipperen() {
+     clearTimeout(werken)
+     buitenwerking = setTimeout(function (){uit()}, 0);
+     buitenwerking = setTimeout(function (){geel()}, 500);
+     buitenwerking = setTimeout(function (){knipperen()}, 1000);
+ }
+
+ function rood() {
+     stoplicht.src = './verkeer/rood.jpg';
+ }
+ function geel() {
+     stoplicht.src = './verkeer/geel.jpg';
+ }
+ function groen() {
+     stoplicht.src = './verkeer/groen.jpg';
+ }
+ function uit() {
+     stoplicht.src = './verkeer/uit.jpg';
+ }
+
+ function uitzetten() {
+     clearTimeout(werken);
+     clearTimeout(buitenwerking);
+     werken = null;
+     buitenwerking = null;
+     stoplicht.src = './verkeer/uit.jpg';
+ }
+</script>
+</body>
+</html>

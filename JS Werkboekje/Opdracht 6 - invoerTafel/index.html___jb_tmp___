@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opdracht 6 - invoerTafel</title>
+</head>
+<body>
+<h1>Opdracht 6 - invoerTafel</h1>
+<p>invoer met behulp van getElementById()</p>
+<p>uitvoer met behulp document.write()</p>
+<p><input type="text" id="tafel" placeholder="Welke tafel?"></p>
+<p><button onclick="berekenen()">OK</button></p>
+<script>
+    function berekenen() {
+        var tafel = document.getElementById("tafel").value;
+
+        document.write("<h1>Dit is de tafel van: " + tafel + "</h1>");
+        document.write("<p>1x " + tafel + " = " + 1 * tafel +"</p>");
+        document.write("<p>2x " + tafel + " = " + 2 * tafel + "</p>");
+        document.write("<p>3x " + tafel + " = " + 3 * tafel + "</p>");
+        document.write("<p>4x " + tafel + " = " + 4 * tafel + "</p>");
+        document.write("<p>5x " + tafel + " = " + 5 * tafel + "</p>");
+        document.write("<p>6x " + tafel + " = " + 6 * tafel + "</p>");
+        document.write("<p>7x " + tafel + " = " + 7 * tafel + "</p>");
+        document.write("<p>8x " + tafel + " = " + 8 * tafel + "</p>");
+        document.write("<p>9x " + tafel + " = " + 9 * tafel + "</p>");
+        document.write("<p>10x " + tafel + " = " + 10 * tafel + "</p>");
+    }
+
+</script>
+</body>
+</html>
